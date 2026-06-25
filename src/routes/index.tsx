@@ -3,9 +3,9 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   Rocket, TrendingUp, Target, Users, Briefcase, Zap, Sparkles, ArrowUpRight,
-  Mail, Linkedin, MapPin, Download, Calendar, GraduationCap, Award, BookOpen,
-  Quote, Star, Send, CheckCircle2, Building2, Lightbulb, Network, Cpu,
-  ChevronLeft, ChevronRight, BarChart3, Brain, Globe,
+  Mail, Linkedin, MapPin, Download, Calendar, GraduationCap, Award,
+  Lightbulb, Cpu, Phone, BarChart3,
+  Network, Send, CheckCircle2,
 } from "lucide-react";
 import { Particles } from "@/components/Particles";
 import { Counter, Reveal } from "@/components/motion-utils";
@@ -15,8 +15,9 @@ import LogoScroller from '../components/sections/LogoScroller';
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Anwarr Ulhaq — Technical Program Manager & Startup Ecosystem Builder" },
-      { name: "description", content: "PMP-certified Technical Program Manager. 200+ startups scaled, PKR 300M+ revenue, PKR 220M+ investment raised." },
+      { title: "Tehniat Hashir | Full Stack Developer Portfolio" },
+      { name: "description", content: "Portfolio of Tehniat Hashir, a Full Stack Developer and React Developer specializing in modern web applications, frontend development, project management, UI/UX design, and digital solutions." },
+      { name: "keywords", content: "Tehniat Hashir, React Developer, Full Stack Developer, Frontend Developer, Web Developer, JavaScript Developer, Portfolio, Rawalpindi Pakistan" },
     ],
   }),
   component: Portfolio,
@@ -52,7 +53,7 @@ function Loader({ onDone }: { onDone: () => void }) {
           initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
           className="absolute top-full mt-8 left-1/2 -translate-x-1/2 text-center w-max"
         >
-          <div className="text-2xl font-display font-bold shimmer-text">ANWARR ULHAQ</div>
+          <div className="text-2xl font-display font-bold shimmer-text">TEHNIAT HASHIR</div>
           <div className="text-xs uppercase tracking-[0.4em] text-muted-foreground mt-2">Initializing…</div>
         </motion.div>
       </div>
@@ -81,9 +82,8 @@ function TechBackground() {
 
 /* ============================== NAV ============================== */
 const NAV = [
-  ["About", "about"], ["Impact", "impact"], ["Experience", "experience"],
-  ["Network", "network"], ["Skills", "skills"], ["Certifications", "certs"],
-  ["Education", "education"], ["Research", "research"], ["Testimonials", "testimonials"],
+  ["About", "about"], ["Experience", "experience"], ["Network", "network"], ["Projects", "projects"],
+  ["Skills", "skills"], ["Education", "education"], ["Additional", "additional"],
   ["Contact", "contact"],
 ];
 function Nav() {
@@ -106,7 +106,7 @@ function Nav() {
                   style={{ background: "var(--gradient-border)" }}>
               <Sparkles className="h-4 w-4 text-white" />
             </span>
-            <span className="text-gradient">Anwarr Ulhaq</span>
+            <span className="text-gradient">Tehniat Hashir</span>
           </a>
           <ul className="hidden xl:flex items-center gap-0 text-sm">
             {NAV.map(([label, id]) => (
@@ -161,18 +161,18 @@ function Hero() {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.1, duration: 0.9 }}
             className="text-5xl sm:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6">
-            <span className="block shimmer-text">ANWARR ULHAQ</span>
+            <span className="block shimmer-text">Hi, I'm Tehniat Hashir</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.4 }}
             className="text-lg sm:text-2xl font-display text-gradient mb-2">
-            Technical Program Manager · Startup Incubation & Venture Operations
+            Full Stack Developer, React Developer, Frontend Engineer &amp; Project Manager
           </motion.p>
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }}
             className="text-sm sm:text-base text-muted-foreground mb-10">
-            Certified PMP & Business Intelligence Professional
+            Motivated and detail-oriented Web Developer with hands-on experience in building responsive and user-friendly web applications. Skilled in frontend development, UI design, project management, digital marketing, and business development.
           </motion.p>
 
           {/* KPI counters */}
@@ -180,9 +180,9 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.6 }}
             className="grid grid-cols-3 gap-3 sm:gap-6 max-w-3xl mx-auto mb-10">
             {[
-              { v: <><Counter to={200} suffix="+" /></>, l: "Startups Scaled" },
-              { v: <>PKR <Counter to={300} suffix="M+" /></>, l: "Revenue Generated" },
-              { v: <>PKR <Counter to={220} suffix="M+" /></>, l: "Investment Raised" },
+              { v: <Counter to={4} />, l: "Featured Projects" },
+              { v: <><Counter to={8} suffix="+" /></>, l: "Real-world Experiences" },
+              { v: <Counter to={6} />, l: "Professional Roles" },
             ].map((k, i) => (
               <div key={i} className="glass rounded-2xl p-4 sm:p-5">
                 <div className="text-xl sm:text-3xl font-display font-bold text-gradient">{k.v}</div>
@@ -194,18 +194,18 @@ function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.8 }}
             className="flex flex-wrap items-center justify-center gap-3">
+            <a href="#projects"
+               className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium glass hover:border-white/40 transition-all">
+              <Rocket className="h-4 w-4" /> View Projects
+            </a>
             <a href="/resume.pdf" download
                className="magnetic-btn inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium text-white"
                style={{ background: "var(--gradient-border)" }}>
-              <Download className="h-4 w-4" /> Download Resume
+              <Download className="h-4 w-4" /> Download CV
             </a>
-            <a href="#experience"
+            <a href="#contact"
                className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium glass hover:border-white/40 transition-all">
-              <Rocket className="h-4 w-4" /> View Experience
-            </a>
-            <a href="https://linkedin.com/in/anwarr-ulhaq" target="_blank" rel="noreferrer"
-               className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium glass hover:border-white/40 transition-all">
-              <Linkedin className="h-4 w-4" /> LinkedIn
+              <Mail className="h-4 w-4" /> Contact Me
             </a>
           </motion.div>
 
@@ -222,23 +222,25 @@ function Hero() {
 
 /* ============================== ABOUT ============================== */
 const ABOUT_PILLARS = [
-  { icon: Rocket, label: "Startup Ecosystems" },
-  { icon: BarChart3, label: "Operational Strategy" },
-  { icon: Lightbulb, label: "Innovation Management" },
-  { icon: Briefcase, label: "Venture Development" },
-  { icon: Cpu, label: "Technology Programs" },
+  { icon: Cpu, label: "Full Stack Development" },
+  { icon: Rocket, label: "React Development" },
+  { icon: Lightbulb, label: "UI/UX Design" },
+  { icon: Briefcase, label: "Project Management" },
+  { icon: BarChart3, label: "Digital Marketing" },
 ];
 function About() {
   return (
-    <Section id="about" eyebrow="About" title={<>Working at the edge of <span className="text-gradient">innovation</span></>}>
+    <Section id="about" eyebrow="About" title={<>Modern web products with <span className="text-gradient">clarity and polish</span></>}>
       <div className="grid lg:grid-cols-5 gap-10 items-start">
         <Reveal x={-30} className="lg:col-span-3">
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            Program management professional with 5+ years at <span className="text-foreground">PITB Incubation Wing</span>,
-            designing and executing incubation and acceleration programs supporting
-            <span className="text-foreground"> 200+ startups</span> across fintech, AI, edtech, AR/VR, and digital commerce.
-            Proven strength in building structured execution systems, KPI tracking, milestone-based program design,
-            cross-functional stakeholder coordination, and founder support frameworks.
+            I am a Computer Science graduate with practical experience in Full Stack Development, Frontend Engineering, Project Management, Graphic Design, Digital Marketing, and Business Development. I have worked with startups, software houses, and innovation hubs including NASTP NICAT and Regional Plan 9.
+          </p>
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mt-6">
+            My expertise includes building responsive web applications, creating modern user interfaces, managing development teams, coordinating with clients, and delivering digital products that solve real business challenges.
+          </p>
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed mt-6">
+            I am passionate about learning new technologies and continuously improving my technical and leadership skills.
           </p>
         </Reveal>
         <div className="lg:col-span-2 space-y-3">
@@ -262,12 +264,12 @@ function About() {
 
 /* ============================== IMPACT ============================== */
 const METRICS = [
-  { to: 200, suffix: "+", label: "Startups Supported", icon: Rocket, prefix: "" },
-  { to: 300, suffix: "M+", label: "Revenue Generated (PKR)", icon: TrendingUp, prefix: "" },
-  { to: 220, suffix: "M+", label: "Investment Raised (PKR)", icon: Target, prefix: "" },
-  { to: 10000, suffix: "+", label: "Individuals Trained", icon: Users, prefix: "" },
-  { to: 500, suffix: "+", label: "Internships Facilitated", icon: Briefcase, prefix: "" },
-  { to: 1500, suffix: "+", label: "Jobs Created", icon: Zap, prefix: "" },
+  { to: 4, label: "Featured Projects", icon: Rocket, prefix: "" },
+  { to: 8, suffix: "+", label: "Real-world Experiences", icon: TrendingUp, prefix: "" },
+  { to: 6, label: "Professional Roles", icon: Target, prefix: "" },
+  { to: 5, suffix: "+", label: "Partnerships & Hubs", icon: Users, prefix: "" },
+  { to: 4, label: "Business Domains", icon: Briefcase, prefix: "" },
+  { to: 10, suffix: "+", label: "Digital Campaigns", icon: Zap, prefix: "" },
 ];
 function Impact() {
   return (
@@ -308,36 +310,51 @@ function Impact() {
 
 /* ============================== EXPERIENCE ============================== */
 const EXPERIENCE = [
-  { role: "Technical Program Manager", org: "PITB Incubation Wing — Punjab IT Board",
-    period: "Jan 2021 – Present · 5+ yrs", location: "Rawalpindi, Pakistan",
-    bullets: ["Led 200+ startups across fintech, AI, edtech, AR/VR & digital commerce.",
-      "Implemented KPI tracking & milestone-based frameworks.",
-      "Enabled PKR 300M+ revenue & PKR 220M+ investment for portfolio.",
-      "Shifted program model from event-driven to outcome-driven.",
-      "1,500+ jobs created · 10,000+ trained · 500+ internships."] },
-  { role: "Project Consultant", org: "Ignite — National Technology Fund",
-    period: "Jan 2026 – Feb 2026 · Contract", location: "Islamabad · Hybrid",
-    bullets: ["Innovation-focused initiatives in Pakistan's national tech funding ecosystem.",
-      "Program-level execution in public-sector innovation environment."] },
-  { role: "Founder & Program Director", org: "Brainiac's Digitalized Education System",
-    period: "Aug 2019 – Dec 2025 · 6+ yrs", location: "Mardan, KP",
-    bullets: ["Founded a digital education initiative for tech awareness & skill development.",
-      "Designed AI awareness, digital tools & entrepreneurship workshops."] },
-  { role: "Marketing & Digital Channel Manager", org: "Dars Ul Quran",
-    period: "Nov 2018 – Present · Part-time", location: "Mardan, KP",
-    bullets: ["Managed digital content strategy & publishing workflows.",
-      "Improved audience engagement through structured planning."] },
-  { role: "Provincial Coordinator", org: "Million Smiles Foundation",
-    period: "Jan 2015 – Jul 2021 · 6+ yrs", location: "Khyber Pakhtunkhwa",
-    bullets: ["Regional coordination of youth-led SDG-aligned welfare initiatives.",
-      "Executed 15+ large-scale welfare initiatives."] },
-  { role: "Visiting Lecturer", org: "ANSI Degree College Mardan",
-    period: "Dec 2020 – Jan 2021 · Part-time", location: "Pakistan",
-    bullets: ["Lectured MBA & BBA students on management & entrepreneurship."] },
-  { role: "Assistant Operations Manager", org: "The Bank of Khyber",
-    period: "Aug 2018 – Sep 2019", location: "Mardan, KP",
-    bullets: ["Managed branch operations in a regulated financial environment.",
-      "Built strong foundation in governance & operational discipline."] },
+  { role: "Full Stack Developer (React) – Paid Intern", org: "Ampflick – NASTP NICAT",
+    period: "April 2026 – Present", location: "Rawalpindi, Pakistan",
+    bullets: ["Developing real-world web applications using React.",
+      "Building backend functionality and API integrations.",
+      "Creating responsive, user-friendly interfaces.",
+      "Improving performance and application structure.",
+      "Collaborating with development teams on live client projects."] },
+  { role: "Lead Generation Executive (Web Development)", org: "QUONO – Regional Plan 9 NASTP",
+    period: "May 2026 – Present", location: "Rawalpindi, Pakistan",
+    bullets: ["Generated qualified leads for web development services.",
+      "Connected with businesses seeking digital solutions.",
+      "Maintained lead databases and prospect tracking.",
+      "Conducted targeted online research and outreach campaigns."] },
+  { role: "Project Manager (Contract Based)", org: "CodeAxisTech",
+    period: "May 2026 – June 2026", location: "Remote",
+    bullets: ["Managed remote software development projects.",
+      "Assigned tasks and monitored progress across teams.",
+      "Coordinated communication between clients and developers.",
+      "Ensured timely project delivery and milestone completion.",
+      "Tracked team performance and project milestones."] },
+  { role: "Graphic Designer + Frontend Developer + Product Lead + Digital Marketing", org: "Yuni + Technospot (NASTP)",
+    period: "December 2025 – April 2026", location: "Rawalpindi, Pakistan",
+    bullets: ["Developed and managed course-based websites.",
+      "Led product initiatives and digital strategy execution.",
+      "Improved website structure and user experience.",
+      "Managed digital marketing campaigns.",
+      "Delivered real-world frontend solutions with polished UI."] },
+  { role: "Frontend Developer Intern (React)", org: "Explorer Bees – NASTP NICAT",
+    period: "July 2025 – October 2025", location: "Rawalpindi, Pakistan",
+    bullets: ["Developed responsive UI components using React.",
+      "Improved user experience through modern design.",
+      "Worked on real-world frontend development projects."] },
+  { role: "Business Developer Intern + Graphic Designer", org: "NASTP NICAT",
+    period: "2 Months", location: "Rawalpindi, Pakistan",
+    bullets: ["Assisted in business development strategies.",
+      "Coordinated client communication and project planning.",
+      "Designed proposals and visual assets for campaigns."] },
+  { role: "Digital Marketing Executive", org: "Econex, Rawalpindi",
+    period: "December 2022 – May 2023", location: "Rawalpindi, Pakistan",
+    bullets: ["Managed social media campaigns.",
+      "Improved brand visibility and audience engagement."] },
+  { role: "Digital Marketing Executive", org: "Pak e Store, Rawalpindi",
+    period: "June 2023 – September 2023", location: "Rawalpindi, Pakistan",
+    bullets: ["Managed digital campaigns.",
+      "Improved audience engagement and online reach."] },
 ];
 
 function Experience() {
@@ -389,17 +406,17 @@ function Experience() {
   );
 }
 
-/* ============================== NETWORK VIZ ============================== */
+/* ============================== NETWORK / STARTUP SCALE ============================== */
 const NODES = [
-  { label: "Founders", icon: Rocket, angle: -90 },
-  { label: "Investors", icon: TrendingUp, angle: -18 },
-  { label: "Mentors", icon: Brain, angle: 54 },
-  { label: "Government", icon: Building2, angle: 126 },
-  { label: "Corporates", icon: Globe, angle: 198 },
+  { label: "Clients", icon: Users, angle: -90 },
+  { label: "Web Apps", icon: Rocket, angle: -18 },
+  { label: "UI/UX", icon: Lightbulb, angle: 54 },
+  { label: "Marketing", icon: Zap, angle: 126 },
+  { label: "Growth", icon: TrendingUp, angle: 198 },
 ];
 function Network_() {
   return (
-    <Section id="network" eyebrow="Ecosystem Impact" title={<>A connected <span className="text-gradient">venture network</span></>}>
+    <Section id="network" eyebrow="Startup Momentum" title={<>A connected <span className="text-gradient">digital delivery network</span></>}>
       <div className="relative aspect-square max-w-2xl mx-auto">
         <svg viewBox="0 0 400 400" className="absolute inset-0 h-full w-full">
           <defs>
@@ -423,7 +440,6 @@ function Network_() {
               />
             );
           })}
-          {/* connections between nodes */}
           {NODES.map((n, i) => {
             const next = NODES[(i + 1) % NODES.length];
             const x1 = 200 + Math.cos((n.angle * Math.PI) / 180) * 160;
@@ -431,7 +447,7 @@ function Network_() {
             const x2 = 200 + Math.cos((next.angle * Math.PI) / 180) * 160;
             const y2 = 200 + Math.sin((next.angle * Math.PI) / 180) * 160;
             return (
-              <motion.line key={i + "-c"} x1={x1} y1={y1} x2={x2} y2={y2}
+              <motion.line key={`${i}-c`} x1={x1} y1={y1} x2={x2} y2={y2}
                 stroke="rgba(160,32,240,0.25)" strokeWidth="1" strokeDasharray="3 4"
                 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1 + i * 0.1 }}
@@ -440,7 +456,6 @@ function Network_() {
           })}
         </svg>
 
-        {/* center node */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <motion.div
             initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }}
@@ -449,13 +464,12 @@ function Network_() {
             style={{ background: "var(--gradient-border)" }}>
             <div className="text-center text-white px-3">
               <Network className="h-6 w-6 mx-auto mb-1" />
-              <div className="text-lg font-bold leading-none">200+</div>
-              <div className="text-[10px] uppercase tracking-wider mt-1">Startups Scaled</div>
+              <div className="text-lg font-bold leading-none">10+</div>
+              <div className="text-[10px] uppercase tracking-wider mt-1">Digital Solutions Delivered</div>
             </div>
           </motion.div>
         </div>
 
-        {/* nodes */}
         {NODES.map((n, i) => {
           const x = 50 + Math.cos((n.angle * Math.PI) / 180) * 40;
           const y = 50 + Math.sin((n.angle * Math.PI) / 180) * 40;
@@ -479,14 +493,66 @@ function Network_() {
   );
 }
 
+/* ============================== PROJECTS ============================== */
+function Projects() {
+  const projects = [
+    {
+      title: "Cricket Player Dashboard",
+      description: "Built an interactive dashboard for cricket player statistics with responsive design, data visualization, and performance tracking features.",
+      tech: ["React", "JavaScript", "CSS"],
+    },
+    {
+      title: "Yuni Courses Website",
+      description: "Developed a live educational platform featuring structured course listings, modern UI, responsive design, and intuitive navigation.",
+      tech: ["React", "HTML", "CSS", "JavaScript"],
+    },
+    {
+      title: "Online Food Ordering Website",
+      description: "Designed and developed a responsive food ordering platform with modern layouts, smooth navigation, and enhanced user experience.",
+      tech: ["React", "JavaScript", "CSS"],
+    },
+    {
+      title: "AI Image Generator Website",
+      description: "Developed an AI-powered image generation platform using prompt-based image creation through API integration and modern frontend technologies.",
+      tech: ["React", "APIs", "JavaScript"],
+    },
+  ];
+
+  return (
+    <Section id="projects" eyebrow="Featured Projects" title={<>Select web projects with <span className="text-gradient">real impact</span></>}>
+      <div className="grid md:grid-cols-2 gap-6">
+        {projects.map((project, index) => (
+          <Reveal key={project.title} delay={index * 0.08}>
+            <motion.div whileHover={{ y: -4 }} className="neon-border rounded-3xl p-6 h-full">
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Project {index + 1}</div>
+                <div className="rounded-full bg-white/5 px-3 py-1 text-xs text-foreground">Web App</div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span key={tech} className="rounded-full bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 /* ============================== SKILLS MATRIX ============================== */
 const SKILL_GROUPS = [
-  { icon: Target, title: "Program Management", color: "#a020f0",
-    items: [["PMP", 95], ["KPI Tracking", 92], ["Program Design", 90], ["Stakeholder Management", 94]] },
-  { icon: Rocket, title: "Startup Ecosystems", color: "#00bfff",
-    items: [["Incubation", 96], ["Acceleration", 92], ["Venture Operations", 88], ["Founder Support", 93]] },
-  { icon: BarChart3, title: "Business & Strategy", color: "#ff4dff",
-    items: [["Business Intelligence", 88], ["Digital Transformation", 85], ["Innovation Strategy", 90], ["Ecosystem Development", 92]] },
+  { icon: Rocket, title: "Frontend Development", color: "#00bfff",
+    items: [["HTML5", 96], ["CSS3", 94], ["JavaScript", 93], ["React.js", 95]] },
+  { icon: Cpu, title: "Backend & Data", color: "#a020f0",
+    items: [["Express.js", 85], ["API Integration", 88], ["SQL (Basic)", 72], ["Python (Basic)", 70]] },
+  { icon: BarChart3, title: "Product & Growth", color: "#ff4dff",
+    items: [["Project Management", 90], ["Lead Generation", 86], ["Graphic Design", 84], ["Digital Marketing", 87]] },
 ] as const;
 
 function Skills() {
@@ -531,21 +597,15 @@ function Skills() {
 }
 
 /* ============================== CERTIFICATIONS ============================== */
-const CERTS = [
-  { name: "AI in Project Management", org: "PMI", year: "2026" },
-  { name: "Google Project Management", org: "Google", year: "2023" },
-  { name: "Google Business Intelligence", org: "Google", year: "2023" },
-  { name: "Innovation & Entrepreneurship", org: "Tec de Monterrey", year: "2023" },
-  { name: "Google Digital Marketing & E-com", org: "Google", year: "2023" },
-  { name: "FinTech: Industry Transformation", org: "HKUST", year: "2023" },
-  { name: "Investment Management", org: "Univ. of Geneva", year: "2023" },
-  { name: "Excel Skills for Business", org: "Macquarie", year: "2023" },
-  { name: "Creating a Tech Startup", org: "HEC Paris", year: "2023" },
-  { name: "Digital Business Models", org: "Lund University", year: "2023" },
-  { name: "Managerial Economics", org: "UIUC", year: "2023" },
-  { name: "Financial Management", org: "UIUC", year: "2023" },
+const TOOL_CARDS = [
+  { name: "VS Code", org: "Editor", year: "Daily" },
+  { name: "Git & GitHub", org: "Version Control", year: "Daily" },
+  { name: "Figma", org: "Design", year: "Regular" },
+  { name: "Chrome DevTools", org: "Debugging", year: "Daily" },
+  { name: "Postman", org: "API Testing", year: "Regular" },
+  { name: "MS Office", org: "Productivity", year: "Regular" },
 ];
-function CertCard({ c }: { c: typeof CERTS[number] }) {
+function ToolCard({ c }: { c: typeof TOOL_CARDS[number] }) {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ rx: 0, ry: 0 });
   const onMove = (e: React.MouseEvent) => {
@@ -572,12 +632,14 @@ function CertCard({ c }: { c: typeof CERTS[number] }) {
     </motion.div>
   );
 }
-function Certifications() {
+function Tools() {
   return (
-    <Section id="certs" eyebrow="Licenses & Certifications" title={<>Continuously <span className="text-gradient">leveling up</span></>}>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {CERTS.map((c, i) => (
-          <Reveal key={c.name} delay={i * 0.05}><CertCard c={c} /></Reveal>
+    <Section id="tools" eyebrow="Tools & Platforms" title={<>A modern development <span className="text-gradient">toolkit</span></>}>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {TOOL_CARDS.map((c, i) => (
+          <Reveal key={c.name} delay={i * 0.05}>
+            <ToolCard c={c} />
+          </Reveal>
         ))}
       </div>
     </Section>
@@ -586,10 +648,24 @@ function Certifications() {
 
 /* ============================== EDUCATION ============================== */
 const EDUCATION = [
-  { degree: "MBA — Finance", school: "Abdul Wali Khan University Mardan", period: "2016 – 2020", note: "CGPA 3.27 · Corporate finance, investment analysis, financial governance." },
-  { degree: "MA — International Relations & Affairs", school: "Abdul Wali Khan University Mardan", period: "2020 – 2022", note: "1st Division · Governance, policy analysis, institutional strategy." },
-  { degree: "BA — Economics & Political Science", school: "Abdul Wali Khan University Mardan", period: "2015 – 2017", note: "2nd Division" },
-  { degree: "ACCA — Business & Accounting", school: "Professional Academy of Commerce", period: "2013 – 2014", note: "Accounting, financial reporting, business law." },
+  {
+    degree: "BS Computer Science",
+    school: "Fazaia Bilquis College (Affiliated with Air University)",
+    period: "2021 – 2025",
+    note: "Focused on Software Development, Web Technologies, Artificial Intelligence, Database Systems, and Computer Science fundamentals."
+  },
+  {
+    degree: "Intermediate in Computer Science (ICS)",
+    school: "Askaria College, Rawalpindi",
+    period: "2018 – 2020",
+    note: "Studied Computer Science, Mathematics, and foundational technical subjects."
+  },
+  {
+    degree: "Matric (Science)",
+    school: "Army Public School & College",
+    period: "2016 – 2018",
+    note: "Completed secondary education with a science background and strong analytical foundations."
+  }
 ];
 function Education() {
   return (
@@ -612,220 +688,51 @@ function Education() {
   );
 }
 
-/* ============================== RESEARCH ============================== */
-const PUBS = [
-  { 
-    title: "Most startup ecosystems don't fail because of lack of capital",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Apr 8, 2026",
-    abstract: "Capital amplifies what already exists. If the underlying system is fragmented, capital accelerates inefficiency. If the system is aligned, capital compounds value. A structural view across Asia, MENA, Europe, and North America reveals that ecosystems don't scale because of capital—they scale because capital enters a system that already knows how to absorb it."
-  },
-  { 
-    title: "How Regional Incubation Can Power National Economic Growth",
-    venue: "GlobalStartupLens · LinkedIn", 
-    type: "Article",
-    date: "Mar 27, 2026",
-    abstract: "Global data shows that how ecosystems are nurtured matters more than raw numbers. Pakistan's startup landscape counts ~170 VC-backed ventures worth $4 billion, yet lacks unicorns primarily due to growth-stage funding gaps. Regional incubation hubs, when aligned with policy and SME development, can transform innovation into lasting national economic impact."
-  },
-  { 
-    title: "The Rise of Micro-Incubators in Second-Tier Cities",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article", 
-    date: "Mar 2, 2026",
-    abstract: "Across Pakistan and globally, micro-incubators in second-tier cities are reshaping how startup ecosystems evolve. This is not about flashy unicorn announcements. It is about decentralization, inclusion, and long-term resilience. Talent exists beyond capitals—what was missing was structured support."
-  },
-  { 
-    title: "Beyond Mentorship: What True Startup Enablement Looks Like",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Feb 4, 2026", 
-    abstract: "Mentorship alone rarely changes outcomes. True startup enablement rests on four pillars: Market Enablement, Operational Enablement, Capital Enablement, and Founder Enablement. Ecosystems mature when they shift from teaching startups to enabling them."
-  },
-  { 
-    title: "Designing the Ideal Founder Journey: Lessons from 100+ Startups",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Jan 17, 2026",
-    abstract: "Most startup failures are not about ideas, but about poorly designed founder journeys. From aspiration to execution, builder to operator, operator to leader, and local player to global thinker—each stage demands a different version of the founder."
-  },
-  { 
-    title: "From Incubation to Acceleration: The Next Frontier",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Jan 5, 2026",
-    abstract: "Globally, the startup support conversation is shifting. The real question today is not how many startups we incubate, but how many we successfully accelerate into scalable, investable, and globally competitive companies. Acceleration is the bridge between ambition and impact."
-  },
-  { 
-    title: "My Vision for the Next Generation of Tech Entrepreneurs",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Nov 8, 2025",
-    abstract: "The next generation of tech entrepreneurs must move from imitation to innovation, building solutions rooted in local realities but with global relevance. Technology is most powerful when it empowers others—innovation that doesn't include everyone isn't progress, it's privilege."
-  },
-  { 
-    title: "Why Incubation Should Be Taught in Business Schools",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Nov 6, 2025",
-    abstract: "Business schools must move beyond theory and start teaching incubation as a discipline. Incubation isn't just about startups—it's about cultivating the mindset, resilience, and problem-solving capability every modern leader needs."
-  },
-  { 
-    title: "The Startup Ecosystem in KPK: Past, Present & Future",
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Nov 4, 2025",
-    abstract: "From small-town innovators to university founders, KPK's startup ecosystem is evolving into one of Pakistan's most promising growth frontiers. The province's journey offers valuable lessons on how inclusion, collaboration, and vision can drive real change."
-  },
-  { 
-    title: '"Digital Pakistan" Starts with Local Incubators – Here\'s How',
-    venue: "GlobalStartupLens · LinkedIn",
-    type: "Article",
-    date: "Nov 1, 2025",
-    abstract: "A truly 'Digital Pakistan' begins at the grassroots level. Local incubators are bridging the digital divide, equipping youth with 21st-century skills, and creating a pipeline of founders who are solving local problems with global potential."
-  },
-  { 
-    title: "Earnings Quality & Stock Returns Analysis",
-    venue: "International Conference on Issues in Management and Social Sciences",
-    type: "Conference Presentation",
-    date: "Aug 2020",
-    abstract: "Presented research on earnings quality and its impact on stock return performance among publicly listed firms at an international academic conference."
-  },
-  { 
-    title: "Impact of Training on SME Performance",
-    venue: "International Review of Basic and Applied Sciences",
-    type: "Published Research",
-    date: "Jun 2020",
-    abstract: "Examined the relationship between structured employee training programs and measurable performance outcomes within SME environments."
-  },
+/* ============================== ADDITIONAL EXPERIENCE ============================== */
+const ADDITIONAL_ITEMS = [
+  { title: "Data Scraping", description: "Collected and structured 2,000+ USPTO records to support research and service delivery workflows." },
+  { title: "Shopify Product Listing", description: "Built optimized product catalogs and storefront pages for Shopify-based commerce stores." },
+  { title: "Social Media Management", description: "Managed social campaigns to improve brand visibility, engagement, and digital reach." },
+  { title: "Annotation Project Management", description: "Coordinated labeling work for AI datasets with quality review and delivery tracking." },
+  { title: "Wix Content Writing", description: "Produced website content and page updates for Wix-powered business sites." },
+  { title: "Payhip Store Builder", description: "Configured Payhip storefronts and digital product listings for online sales." },
 ];
 
-function Research() {
-  const [open, setOpen] = useState<number | null>(null);
-  const [showAll, setShowAll] = useState(false);
-  
-  const displayedPubs = showAll ? PUBS : PUBS.slice(0, 6);
-
+function AdditionalExperience() {
   return (
-    <Section id="research" eyebrow="Research & Publications" title={<>Research that <span className="text-gradient">moves the field</span></>}>
-      <div className="grid lg:grid-cols-2 gap-6">
-        {displayedPubs.map((p, i) => (
-          <Reveal key={p.title} delay={i * 0.12}>
-            <motion.div
-              whileHover={{ y: -4 }}
-              onClick={() => setOpen(open === i ? null : i)}
-              className="neon-border rounded-2xl p-6 cursor-pointer h-full flex flex-col"
-            >
-              <div className="flex items-center gap-2 text-xs mb-3">
-                <BookOpen className="h-4 w-4" style={{ color: "var(--neon-pink)" }} />
-                <span style={{ color: "var(--neon-pink)" }}>{p.type}</span>
-                <span className="text-muted-foreground">· {p.date}</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 line-clamp-2">{p.title}</h3>
-              <div className="text-sm mb-3" style={{ color: "var(--neon-blue)" }}>{p.venue}</div>
-              <AnimatePresence>
-                {open === i && (
-                  <motion.p
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto", marginTop: 16 }}
-                    exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                    className="text-sm text-muted-foreground overflow-hidden flex-grow"
-                  >
-                    {p.abstract}
-                  </motion.p>
-                )}
-              </AnimatePresence>
-              <div className="text-xs text-muted-foreground mt-3">
-                {open === i ? "Click to collapse" : "Click to expand"}
-              </div>
+    <Section id="additional" eyebrow="Additional Experience" title={<>Additional skills and real-world <span className="text-gradient">deliverables</span></>}>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {ADDITIONAL_ITEMS.map((item, i) => (
+          <Reveal key={item.title} delay={i * 0.08}>
+            <motion.div whileHover={{ y: -4 }} className="neon-border rounded-3xl p-6 h-full">
+              <div className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">{item.title}</div>
+              <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
             </motion.div>
           </Reveal>
         ))}
       </div>
-      
-      {/* View More Button */}
-      <motion.div 
-        className="flex justify-center mt-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <a
-          href="https://www.linkedin.com/in/anwarr-ulhaq/recent-activity/articles/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-full neon-border hover:scale-105 transition-all duration-300 group"
-        >
-          <span className="text-sm font-medium">View All Articles on LinkedIn</span>
-          <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" style={{ color: "var(--neon-pink)" }} />
-          <span className="text-xs text-muted-foreground">(12+ articles)</span>
-        </a>
-      </motion.div>
     </Section>
   );
 }
 
-/* ============================== TESTIMONIALS ============================== */
-const TESTIMONIALS = [
-  { name: "Noushin Paracha", role: "Certified NLP & Silva Master Practitioner · CEO & Founder",
-    quote: "Anwar has an exceptional ability to bridge technology, business strategy, and startup development. His work in mentoring ventures and supporting startup ecosystems reflects not only his technical expertise but also his genuine commitment to empowering entrepreneurs and driving meaningful impact. What stands out is his clarity of thought, strong leadership mindset, and dedication to building solutions that create sustainable growth." },
-  { name: "Sadeeq Khan", role: "Senior Program Manager, Service Pro · Direct Report",
-    quote: "Anwarr has a unique ability to combine strategic thinking with practical execution. He provides clear direction, sets realistic goals, and ensures everyone understands their responsibilities. What truly sets him apart is his mentorship — he guided me both professionally and personally, helping me strengthen my decision-making, leadership skills, and confidence." },
+const LANGUAGES = [
+  { name: "English", level: "Professional Working Proficiency" },
+  { name: "Urdu", level: "Native Proficiency" },
+  { name: "Chinese", level: "Basic Proficiency" },
 ];
-function Testimonials() {
-  const [idx, setIdx] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setIdx((i) => (i + 1) % TESTIMONIALS.length), 7000);
-    return () => clearInterval(id);
-  }, []);
-  const t = TESTIMONIALS[idx];
-  return (
-    <Section id="testimonials" eyebrow="Testimonials" title={<>Trusted by <span className="text-gradient">leaders</span></>}>
-      <div className="relative max-w-4xl mx-auto">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.6 }}
-            className="neon-border rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-30"
-                 style={{ background: "radial-gradient(circle at top right, rgba(255,77,255,0.3), transparent 60%)" }} />
-            <Quote className="h-10 w-10 mb-6 relative" style={{ color: "var(--neon-pink)" }} />
-            <p className="text-lg sm:text-xl leading-relaxed relative">{t.quote}</p>
-            <div className="mt-6 flex items-center gap-3 relative">
-              {[...Array(5)].map((_, i) => (
-                <motion.span key={i}
-                  initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.3 + i * 0.08, type: "spring" }}>
-                  <Star className="h-4 w-4 fill-current" style={{ color: "#fbbf24" }} />
-                </motion.span>
-              ))}
-            </div>
-            <div className="mt-6 relative">
-              <div className="font-semibold">{t.name}</div>
-              <div className="text-sm text-muted-foreground">{t.role}</div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
 
-        <div className="mt-6 flex items-center justify-center gap-4">
-          <button onClick={() => setIdx((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-                  className="glass rounded-full p-2 hover:scale-110 transition-transform">
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <div className="flex gap-2">
-            {TESTIMONIALS.map((_, i) => (
-              <button key={i} onClick={() => setIdx(i)}
-                className={`h-2 rounded-full transition-all ${i === idx ? "w-8" : "w-2"}`}
-                style={{ background: i === idx ? "var(--gradient-border)" : "rgba(255,255,255,0.2)" }} />
-            ))}
-          </div>
-          <button onClick={() => setIdx((i) => (i + 1) % TESTIMONIALS.length)}
-                  className="glass rounded-full p-2 hover:scale-110 transition-transform">
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
+function Languages() {
+  return (
+    <Section id="languages" eyebrow="Languages" title={<>Communication across <span className="text-gradient">global teams</span></>}>
+      <div className="grid sm:grid-cols-3 gap-6">
+        {LANGUAGES.map((lang, i) => (
+          <Reveal key={lang.name} delay={i * 0.08}>
+            <motion.div whileHover={{ y: -4 }} className="neon-border rounded-3xl p-6 h-full">
+              <div className="text-lg font-semibold mb-2">{lang.name}</div>
+              <div className="text-sm text-muted-foreground">{lang.level}</div>
+            </motion.div>
+          </Reveal>
+        ))}
       </div>
     </Section>
   );
@@ -841,17 +748,18 @@ function Contact() {
     (e.target as HTMLFormElement).reset();
   };
   return (
-    <Section id="contact" eyebrow="Contact" title={<>Let's <span className="text-gradient">build something</span></>}>
+    <Section id="contact" eyebrow="Contact" title={<>Let's Build Something Great <span className="text-gradient">Together</span></>}>
       <div className="grid lg:grid-cols-5 gap-8">
         <Reveal x={-30} className="lg:col-span-2 space-y-6">
           <p className="text-muted-foreground">
-            Open to global opportunities in Program/Project Management, Operations & Strategy,
-            Startup & Venture Ecosystems, and Technical Program Management.
+            I am open to internships, freelance opportunities, full-time roles, project collaborations, and innovative development projects. Feel free to reach out to discuss your ideas.
           </p>
           {[
-            { icon: MapPin, label: "Rawalpindi, Punjab, Pakistan" },
-            { icon: Linkedin, label: "linkedin.com/in/anwarr-ulhaq", href: "https://linkedin.com/in/anwarr-ulhaq" },
-            { icon: Mail, label: "Available on request", href: "mailto:hello@example.com" },
+            { icon: MapPin, label: "Rawalpindi, Pakistan" },
+            { icon: Mail, label: "tehniathashir@gmail.com", href: "mailto:tehniathashir@gmail.com" },
+            { icon: Linkedin, label: "linkedin.com/in/tehniat-hashir-a860b025b", href: "https://www.linkedin.com/in/tehniat-hashir-a860b025b/" },
+            { icon: Sparkles, label: "behance.net/tehniathashir", href: "https://www.behance.net/tehniathashir" },
+            { icon: Phone, label: "+92 336 0925493", href: "tel:+923360925493" },
           ].map((c, i) => (
             <a key={i} href={c.href} target={c.href?.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
                className="flex items-center gap-3 glass rounded-2xl p-4 hover:border-white/40 transition-all group">
@@ -929,14 +837,14 @@ function Footer() {
               <Sparkles className="h-4 w-4 text-white" />
             </span>
             <div>
-              <div className="font-display font-bold text-gradient">Anwarr Ulhaq</div>
-              <div className="text-xs text-muted-foreground">Technical Program Manager</div>
+              <div className="font-display font-bold text-gradient">Tehniat Hashir</div>
+              <div className="text-xs text-muted-foreground">Full Stack Developer | React Developer</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
             {[
-              { icon: Linkedin, href: "https://linkedin.com/in/anwarr-ulhaq" },
-              { icon: Mail, href: "mailto:hello@example.com" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/tehniat-hashir-a860b025b/" },
+              { icon: Mail, href: "mailto:tehniathashir@gmail.com" },
               { icon: Download, href: "/resume.pdf" },
             ].map((s, i) => (
               <a key={i} href={s.href} target={s.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
@@ -947,7 +855,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-8 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Anwarr Ulhaq. Crafted with motion, light & care.
+          © {new Date().getFullYear()} Tehniat Hashir. Full Stack Developer | React Developer | Frontend Developer.
         </div>
       </div>
     </footer>
@@ -986,18 +894,18 @@ function Portfolio() {
         <Hero />
         <TaskScroller />
         <About />
-         <LogoScroller />
+        <LogoScroller />
         <Impact />
         <Experience />
         <Network_ />
+        <Projects />
         <Skills />
-        <Certifications />
+        <Tools />
         <Education />
-        <Research />
-        <Testimonials />
+        <AdditionalExperience />
+        <Languages />
         <Contact />
         <Footer />
-        
       </main>
     </>
   );

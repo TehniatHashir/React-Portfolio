@@ -7,19 +7,19 @@ interface TaskScrollerProps {
 
 const TaskScroller: React.FC<TaskScrollerProps> = ({ className }) => {
   const tasks = [
-    'Email Drafting',
-    'Data Analysis',
-    'PR Reviews',
-    'Scheduling',
-    'SQL Queries',
-    'API Calls',
-    'File',
-    'Slack Summaries',
-    'Lead Scoring',
-    'Image Tagging',
-    'Test Running',
-    'Deployment',
-    'Log Parsing'
+    'React UI Components',
+    'Responsive Web Design',
+    'API Integration',
+    'Dashboard Development',
+    'Landing Page Design',
+    'Form Validation',
+    'Project Planning',
+    'Team Collaboration',
+    'UI Prototyping',
+    'Digital Marketing',
+    'Graphic Assets',
+    'Quality Testing',
+    'Client Review'
   ];
 
   // Split tasks into two rows

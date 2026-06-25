@@ -7,9 +7,9 @@ interface LogoScrollerProps {
 
 const LogoScroller: React.FC<LogoScrollerProps> = ({ className }) => {
   const logos = [
-    { name: 'PITB', icon: '/images/pitb (2).png', size: '140px' },
-    { name: 'Regional Plane 9', icon: '/images/regional.png', size: '390px' },
     { name: 'NASTP', icon: '/images/nastp.png', size: '140px' },
+    { name: 'Regional Plan 9', icon: '/images/regional.png', size: '390px' },
+    { name: 'PITB', icon: '/images/pitb (2).png', size: '140px' },
     { name: 'Bank of Khyber', icon: '/images/bok (2).png', size: '140px' },
     { name: 'Ignite', icon: '/images/ignite.png', size: '140px' },
   ];
