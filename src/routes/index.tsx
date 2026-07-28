@@ -687,7 +687,6 @@ function Education() {
     </Section>
   );
 }
-
 /* ============================== ADDITIONAL EXPERIENCE ============================== */
 const ADDITIONAL_ITEMS = [
   { title: "Data Scraping", description: "Collected and structured 2,000+ USPTO records to support research and service delivery workflows." },
