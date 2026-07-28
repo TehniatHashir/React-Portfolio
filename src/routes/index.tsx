@@ -1,3 +1,5 @@
+// FRESH BUILD - FIX EDUCATION
+
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState, type FormEvent } from "react";
