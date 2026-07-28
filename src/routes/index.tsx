@@ -1,4 +1,4 @@
-// FRESH BUILD - FIX EDUCATION
+// RENAMED FILE - FRESH BUILD
 
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
