@@ -648,7 +648,7 @@ function Tools() {
   );
 }
 
-/* ============================== EDUCATION ============================== */
+/* ============================== EDUCATION section ============================== */
 const EDUCATION = [
   {
     degree: "BS Computer Science",

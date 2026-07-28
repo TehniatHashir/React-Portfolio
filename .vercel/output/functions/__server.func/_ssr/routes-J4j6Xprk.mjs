@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { a as AnimatePresence, i as motion, n as useTransform, r as useScroll, t as useInView } from "../_libs/framer-motion.mjs";
 import { S as ArrowUpRight, _ as CircleCheck, a as Sparkles, b as Briefcase, c as Phone, d as Mail, f as Linkedin, g as Cpu, h as Download, i as Target, l as Network, m as GraduationCap, n as Users, o as Send, p as Lightbulb, r as TrendingUp, s as Rocket, t as Zap, u as MapPin, v as ChartColumn, x as Award, y as Calendar } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-B0kX3Clu.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-J4j6Xprk.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 /** Lightweight canvas particle field with mouse-follow glow. */
@@ -1500,28 +1500,22 @@ function Tools() {
 }
 var EDUCATION = [
 	{
-		degree: "MBA — Finance",
-		school: "Abdul Wali Khan University Mardan",
-		period: "2016 – 2020",
-		note: "CGPA 3.27 · Corporate finance, investment analysis, financial governance."
+		degree: "BS Computer Science",
+		school: "Fazaia Bilquis College (Affiliated with Air University)",
+		period: "2021 – 2025",
+		note: "Focused on Software Development, Web Technologies, Artificial Intelligence, Database Systems, and Computer Science fundamentals."
 	},
 	{
-		degree: "MA — International Relations & Affairs",
-		school: "Abdul Wali Khan University Mardan",
-		period: "2020 – 2022",
-		note: "1st Division · Governance, policy analysis, institutional strategy."
+		degree: "Intermediate in Computer Science (ICS)",
+		school: "Askaria College, Rawalpindi",
+		period: "2018 – 2020",
+		note: "Studied Computer Science, Mathematics, and foundational technical subjects."
 	},
 	{
-		degree: "BA — Economics & Political Science",
-		school: "Abdul Wali Khan University Mardan",
-		period: "2015 – 2017",
-		note: "2nd Division"
-	},
-	{
-		degree: "ACCA — Business & Accounting",
-		school: "Professional Academy of Commerce",
-		period: "2013 – 2014",
-		note: "Accounting, financial reporting, business law."
+		degree: "Matric (Science)",
+		school: "Army Public School & College",
+		period: "2016 – 2018",
+		note: "Completed secondary education with a science background and strong analytical foundations."
 	}
 ];
 function Education() {
